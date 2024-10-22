@@ -5,7 +5,7 @@ import os
 class FileData(models.Model):
     file_name = models.CharField(max_length=255)  # Still keeping the file name
     file_content = models.TextField()  # To store the string content of the file
-    uploaded_file = models.FileField(upload_to='uploads/', blank=True, null=True)  # Allow file uploads
+    uploaded_file = models.FileField(upload_to='media/', blank=True, null=True)  # Allow file uploads
 
     def save(self, *args, **kwargs):
         if self.uploaded_file:
